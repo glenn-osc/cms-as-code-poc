@@ -1,3 +1,1 @@
-module.exports = function runMigration(migration) {
-  return;
-};
+module.exports = () => undefined;
