@@ -1,7 +1,7 @@
 // @ts-check
 /** @type {import('contentful-migration').MigrationFunction} */
 module.exports = async function (migration) {
-  const entryID = migration.editContentType("Post").createField("entryID", {
+  const entryID = migration.editContentType("post").createField("entryID", {
     name: "Entry ID",
     type: "Symbol",
     required: true,
