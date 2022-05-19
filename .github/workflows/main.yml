@@ -14,7 +14,7 @@ jobs:
 
     - name: Contentful Migration
       id: migrate
-      uses: contentful-userland/contentful-migration-automation@v1
+      uses: contentful-userland/contentful-action@v1
       with: # Set the secret as an input
         space_id: ${{ secrets.CONTENTFUL_SPACE_ID }}
         management_api_key: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
