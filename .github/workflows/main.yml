@@ -13,8 +13,8 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Contentful Migration
-      id: migrate
-      uses: contentful-userland/contentful-action@v1
+      id: migration
+      uses: contentful/contentful-action@main
       env:
         MIGRATIONS_DIR: 'contentful/migrations'
         SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
