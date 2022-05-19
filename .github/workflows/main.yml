@@ -18,7 +18,7 @@ jobs:
       with: # Set the secret as an input
         space_id: ${{ secrets.CONTENTFUL_SPACE_ID }}
         management_api_key: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
-        migrations_dir: 'contentful/migrations'
+        migrations_dir: contentful/migrations
 
     - name: Create commit comment
       uses: peter-evans/commit-comment@v1
