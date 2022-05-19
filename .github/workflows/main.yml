@@ -14,7 +14,7 @@ jobs:
 
     - name: Contentful Migration
       id: migration
-      uses: glenn-osc/contentful-action
+      uses: glenn-osc/contentful-action@main
       env:
         MIGRATIONS_DIR: migrations
         SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
