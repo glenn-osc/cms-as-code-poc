@@ -16,7 +16,7 @@ jobs:
       id: migration
       uses: contentful-userland/contentful-action@v1
       env:
-        MIGRATIONS_DIR: 'contentful/migrations'
+        MIGRATIONS_DIR: migrations
         SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
         MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
         LOG_LEVEL: verbose
