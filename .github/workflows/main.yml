@@ -15,10 +15,11 @@ jobs:
     - name: Contentful Migration
       id: migration
       uses: glenn-osc/contentful-action@main
-      with:
-        migrations_dir: migrations
-        space_id: ${{ secrets.CONTENTFUL_SPACE_ID }}
-        management_api_key: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
+      env:
+        MIGRATIONS_DIR: migrations
+        SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+        MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
+        LOG_LEVEL: verbose
 
     - name: Create commit comment
       uses: peter-evans/commit-comment@v1
