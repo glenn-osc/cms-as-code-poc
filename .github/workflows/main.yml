@@ -14,7 +14,7 @@ jobs:
 
     - name: Contentful Migration
       id: migration
-      uses: contentful/contentful-action@main
+      uses: contentful-userland/contentful-action@v1
       env:
         MIGRATIONS_DIR: 'contentful/migrations'
         SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
