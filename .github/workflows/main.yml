@@ -15,10 +15,11 @@ jobs:
     - name: Contentful Migration
       id: migrate
       uses: contentful-userland/contentful-action@v1
-      with: # Set the secret as an input
-        space_id: ${{ secrets.CONTENTFUL_SPACE_ID }}
-        management_api_key: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
-        migrations_dir: contentful/migrations
+      env:
+        MIGRATIONS_DIR: 'contentful/migrations'
+        SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+        MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
+        LOG_LEVEL: verbose
 
     - name: Create commit comment
       uses: peter-evans/commit-comment@v1
