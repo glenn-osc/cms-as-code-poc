@@ -1,0 +1,28 @@
+name: Deploy Contentful
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    name: Contentful Migration
+    steps:
+    - name: Check out code into the directory
+      uses: actions/checkout@v1
+
+    - name: Contentful Migration
+      id: migrate
+      uses: contentful-userland/contentful-action@main
+      with: # Set the secret as an input
+        space_id: ${{ secrets.CONTENTFUL_SPACE_ID }}
+        management_api_key: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
+        migrations_dir: 'contentful/migrations'
+
+    - name: Create commit comment
+      uses: peter-evans/commit-comment@v1
+      with:
+        body: |
+          See changes to the [${{steps.migrate.outputs.environment_name }} ][1] Environment on Contentful.
+          [1]: ${{steps.migrate.outputs.environment_url}}
