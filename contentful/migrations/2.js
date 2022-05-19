@@ -7,7 +7,7 @@ module.exports = async function (migration) {
     required: true,
   });
   migration
-    .editContentType("Post")
+    .editContentType("post")
     .changeFieldControl(entryID.id, "builtin", "slugEditor", {
       trackingFieldId: "title",
     });
