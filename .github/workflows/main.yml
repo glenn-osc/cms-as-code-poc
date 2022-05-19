@@ -16,9 +16,9 @@ jobs:
       id: migration
       uses: glenn-osc/contentful-action@main
       env:
-        MIGRATIONS_DIR: migrations
-        SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-        MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
+        INPUT_MIGRATIONS_DIR: migrations
+        INPUT_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+        INPUT_MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
         LOG_LEVEL: verbose
 
     - name: Create commit comment
