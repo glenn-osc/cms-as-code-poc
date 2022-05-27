@@ -6,7 +6,7 @@ const UNIQUE_ENTRY_FIELD = "UniqueEntry";
 module.exports = async function (migration) {
   migration.transformEntries({
     contentType: POST_TYPE,
-    from: ["Content"],
+    from: ["content"],
     to: [UNIQUE_ENTRY_FIELD],
     transformEntryForLocale: function (fromFields, currentLocale) {
       const uuid = Math.random().toString();
