@@ -10,7 +10,7 @@ module.exports = async function (migration, { makeRequest }) {
     },
     data: [
       {
-        op: "add",
+        op: "replace",
         path: "/fields/title/en-US",
         value: "Hello, World!",
       },
