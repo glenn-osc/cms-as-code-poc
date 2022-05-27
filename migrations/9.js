@@ -2,7 +2,6 @@ const ENTRY1_ID = "0eXAcCSeLEfvrSFqWBeUS";
 // @ts-check
 /** @type {import('contentful-migration').MigrationFunction} */
 module.exports = async function (migration, { makeRequest }) {
-  //TODO: GET CONTENTFUL VERSION FROM API
   // Update entry title
   await makeRequest({
     method: "PATCH",
