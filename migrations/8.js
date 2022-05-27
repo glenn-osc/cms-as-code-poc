@@ -7,6 +7,7 @@ module.exports = async function (migration, { makeRequest }) {
     url: `/entries/${ENTRY1_ID}`,
     headers: {
       "Content-Type": "application/json-patch+json",
+      "X-Contentful-Version": 12,
     },
     data: [
       {
