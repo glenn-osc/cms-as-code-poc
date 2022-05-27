@@ -1,10 +1,10 @@
-import entries from "../constants/entry";
+const ENTRY1_ID = "0eXAcCSeLEfvrSFqWBeUS";
 // @ts-check
 /** @type {import('contentful-migration').MigrationFunction} */
 module.exports = async function (migration, { makeRequest }) {
   await makeRequest({
     method: "PATCH",
-    url: `/entries/${entries.entry1}`,
+    url: `/entries/${ENTRY1_ID}`,
     data: [
       {
         op: "add",
