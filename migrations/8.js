@@ -5,6 +5,9 @@ module.exports = async function (migration, { makeRequest }) {
   await makeRequest({
     method: "PATCH",
     url: `/entries/${ENTRY1_ID}`,
+    headers: {
+      "Content-Type": "application/json-patch+json",
+    },
     data: [
       {
         op: "add",
