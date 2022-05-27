@@ -2,7 +2,7 @@ name: Deploy Contentful
 
 on:
   push:
-    branches: [ main ]
+    branches: [ staging, main ]
 jobs:
   build:
 
