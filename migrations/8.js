@@ -4,7 +4,8 @@ module.exports = async function (migration, { makeRequest }) {
   // Upload an image
   const image = await makeRequest({
     method: "POST",
-    url: `/assets`,
+    baseURL: "https://upload.contentful.com",
+    url: `/upload`,
     headers: {
       "Content-Type": "application/octet-stream",
     },
