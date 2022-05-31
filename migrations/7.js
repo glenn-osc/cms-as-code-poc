@@ -41,7 +41,7 @@ module.exports = async function (migration, { makeRequest }) {
     method: "PUT",
     url: `/assets/${assetId}/published`,
     headers: {
-      "X-Contentful-Version": assetVersion,
+      "X-Contentful-Version": assetVersion + 1,
     },
   });
 };
