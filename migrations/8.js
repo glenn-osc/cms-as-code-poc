@@ -12,12 +12,12 @@ module.exports = async function (migration, { makeRequest }) {
     data: {
       fields: {
         title: {
-          "en-US": "Corgi",
+          "en-US": "Corgi 2",
         },
         file: {
           "en-US": {
             contentType: "image/jpeg",
-            fileName: "corgi.jpeg",
+            fileName: "corgi2.jpeg",
             upload:
               "https://images.unsplash.com/photo-1600077029182-92ac8906f9a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29yZ2l8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
           },
