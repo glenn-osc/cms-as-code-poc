@@ -1,6 +1,13 @@
 // @ts-check
 /** @type {import('contentful-migration').MigrationFunction} */
 module.exports = async function (migration, { makeRequest }) {
+  const delay = (delayInms) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(2);
+      }, delayInms);
+    });
+  };
   //Create an asset
   const asset = await makeRequest({
     method: "POST",
@@ -34,6 +41,8 @@ module.exports = async function (migration, { makeRequest }) {
       "X-Contentful-Version": assetVersion,
     },
   });
+  // Wait for 3 seconds as this request might return before the asset processing is finished
+  delay(3000);
   // Publish an asset
   await makeRequest({
     method: "PUT",
