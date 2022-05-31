@@ -34,15 +34,14 @@ module.exports = async function (migration, { makeRequest }) {
       "X-Contentful-Version": assetVersion,
     },
   });
-  // Wait for 3 seconds as this request might return before the asset processing is finished
-  setTimeout(() => {
-    // Publish an asset
-    makeRequest({
-      method: "PUT",
-      url: `/assets/${assetId}/published`,
-      headers: {
-        "X-Contentful-Version": assetVersion,
-      },
-    });
-  }, 5000);
+  // Wait for 5 seconds as this request might return before the asset processing is finished
+  await new Promise((res) => setTimeout(res, 5000));
+  // Publish an asset
+  await makeRequest({
+    method: "PUT",
+    url: `/assets/${assetId}/published`,
+    headers: {
+      "X-Contentful-Version": assetVersion,
+    },
+  });
 };
